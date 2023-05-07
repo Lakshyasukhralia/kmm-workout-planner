@@ -39,6 +39,7 @@ kotlin {
                 // Voyager Navigator
                 val voyagerVersion = "1.0.0-rc05"
                 implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
+                implementation("cafe.adriel.voyager:voyager-tab-navigator:$voyagerVersion")
 
                 // Ktor
                 val ktorVersion = "2.3.0"

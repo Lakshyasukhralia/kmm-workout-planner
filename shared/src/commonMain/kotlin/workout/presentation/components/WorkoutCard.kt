@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -24,8 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import core.utils.AsyncImage
@@ -47,22 +44,18 @@ fun WorkoutCard(
             .height(IntrinsicSize.Min),
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+                .padding(10.dp),
         ) {
             Column(
                 modifier = Modifier
-                    .padding(4.dp)
-                    .fillMaxSize()
-                    .weight(1f)
-                    .padding(4.dp),
+                    .wrapContentSize(),
                 verticalArrangement = Arrangement.SpaceBetween,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Card(
                     modifier = Modifier
-                        .height(100.dp)
-                        .width(100.dp)
-                        .padding(10.dp)
+                        .size(75.dp)
                         .weight(1f),
                     elevation = 5.dp
                 ) {
@@ -74,27 +67,28 @@ fun WorkoutCard(
                     )
                 }
             }
+            Spacer(modifier = Modifier.width(15.dp))
             Spacer(
                 modifier = Modifier
                     .fillMaxHeight()
                     .width(1.dp)
-                    .padding(vertical = 30.dp)
+                    .padding(vertical = 10.dp)
                     .background(Color.Black)
             )
-            Column(
-                modifier = Modifier
-                    .padding(4.dp)
-                    .fillMaxSize()
-                    .weight(1f)
-                    .padding(4.dp),
-                verticalArrangement = Arrangement.SpaceEvenly,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Spacer(modifier = Modifier.width(15.dp))
+            Column {
                 Text(
                     text = workoutModel.name,
                     color = Color.Black,
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 30.sp,
+                    fontSize = 20.sp,
+                )
+                Text(
+                    text = "It's important to listen to your body and avoid any exercises",
+                    color = Color.Black,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 14.sp,
+                    maxLines = 3
                 )
             }
         }

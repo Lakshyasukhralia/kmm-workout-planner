@@ -55,8 +55,8 @@ class WorkoutListingScreen(val category: String = "My Category") : Screen {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(10.dp)
-                .background(Color.White),
+                .background(Color.White)
+                .padding(10.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
 
