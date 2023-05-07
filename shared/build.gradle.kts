@@ -35,13 +35,26 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+
+                // Voyager Navigator
+                val voyagerVersion = "1.0.0-rc05"
+                implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
+
+                // Ktor
+                val ktorVersion = "2.3.0"
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.6.1")
+                api("androidx.activity:activity-compose:1.7.1")
                 api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.9.0")
+                api("androidx.core:core-ktx:1.10.0")
+
+                //Coil
+                implementation("io.coil-kt:coil-compose:2.3.0")
             }
         }
         val iosX64Main by getting
