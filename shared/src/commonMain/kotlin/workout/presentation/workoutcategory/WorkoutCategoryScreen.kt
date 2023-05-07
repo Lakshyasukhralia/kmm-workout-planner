@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import workout.presentation.components.WorkoutCategoryCard
 import workout.presentation.workoutlisting.WorkoutListingScreen
 

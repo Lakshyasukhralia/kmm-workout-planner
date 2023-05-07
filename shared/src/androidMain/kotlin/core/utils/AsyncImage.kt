@@ -1,4 +1,4 @@
-package utils
+package core.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,4 +21,14 @@ actual fun AsyncImage(
     colorFilter: ColorFilter?,
     filterQuality: FilterQuality
 ) {
+    coil.compose.SubcomposeAsyncImage(
+        model = imageUrl,
+        contentDescription = contentDescription,
+        modifier = modifier,
+        alignment = alignment,
+        contentScale = contentScale,
+        alpha = alpha,
+        colorFilter = colorFilter,
+        filterQuality = filterQuality,
+    )
 }

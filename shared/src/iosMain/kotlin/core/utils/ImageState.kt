@@ -1,4 +1,4 @@
-package utils
+package core.utils
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.ImageBitmap

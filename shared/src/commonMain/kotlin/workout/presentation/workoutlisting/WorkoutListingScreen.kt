@@ -64,13 +64,13 @@ class WorkoutListingScreen(val category: String = "My Category") : Screen {
             item {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(
-                        painter = painterResource("arrow_back_headless.xml"),
+                        painter = painterResource("arrow_left_headless.xml"),
                         contentDescription = "Back",
                         modifier = Modifier.size(30.dp).clickable {
                             navigator.pop()
                         }
                     )
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
                     Column {
                         Text(
                             text = category,
@@ -87,8 +87,8 @@ class WorkoutListingScreen(val category: String = "My Category") : Screen {
                             modifier = Modifier.fillMaxWidth()
                         )
                     }
-                    Spacer(modifier = Modifier.height(20.dp))
                 }
+                Spacer(modifier = Modifier.height(20.dp))
             }
             items(workoutList) {
                 WorkoutCard(it)

@@ -1,25 +1,24 @@
-package utils
+package core.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.DefaultAlpha
 import androidx.compose.ui.graphics.FilterQuality
-import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.layout.ContentScale
 
 /**
  * Implementation of [AsyncImage] for iOS platform.
  */
 @Composable
-expect fun AsyncImage(
+actual fun AsyncImage(
     imageUrl: String?,
     contentDescription: String?,
     modifier: Modifier,
-    alignment: Alignment = Alignment.Center,
+    alignment: Alignment,
     contentScale: ContentScale,
-    alpha: Float = DefaultAlpha,
-    colorFilter: ColorFilter? = null,
-    filterQuality: FilterQuality = DrawScope.DefaultFilterQuality
-)
+    alpha: Float,
+    colorFilter: ColorFilter?,
+    filterQuality: FilterQuality
+) {
+}
